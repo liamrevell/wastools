@@ -1,9 +1,9 @@
-export(permute_test, sign_test)
+export(ci, permute_test, sign_test)
 
 S3method(print, sign.test)
 S3method(plot, permute.test)
 S3method(print, permute.test)
 
-importFrom(stats, binom.test, pbinom)
+importFrom(stats, binom.test, pbinom, setNames)
 importFrom(graphics, hist, lines, plot, text)
 importFrom(methods, hasArg)

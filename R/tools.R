@@ -79,3 +79,13 @@ plot.permute.test<-function(x,...){
 	text(x$difference,0.95*max(h$counts),
 		"observed\ndifference",cex=0.7,pos=2)
 }
+
+ci<-function(x,conf.level=0.95){
+    alpha<-1-conf.level
+    xbar<-mean(x)
+    sdx<-sd(x)
+    nx<-length(x)
+    t<-qt(1-alpha/2,df=nx-1)
+    setNames(xbar+t*sdx/sqrt(nx)*c(-1,1),
+        c("lower","upper"))
+}
