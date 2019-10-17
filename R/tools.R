@@ -81,11 +81,11 @@ plot.permute.test<-function(x,...){
 }
 
 ci<-function(x,conf.level=0.95){
-    alpha<-1-conf.level
-    xbar<-mean(x)
-    sdx<-sd(x)
-    nx<-length(x)
-    t<-qt(1-alpha/2,df=nx-1)
-    setNames(xbar+t*sdx/sqrt(nx)*c(-1,1),
-        c("lower","upper"))
+	alpha<-1-conf.level
+	xbar<-mean(x)
+	sdx<-sd(x)
+	nx<-length(x)
+	t<-qt(1-alpha/2,df=nx-1)
+	setNames(xbar+t*sdx/sqrt(nx)*c(-1,1),
+		c("lower","upper"))
 }
