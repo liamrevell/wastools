@@ -1,4 +1,4 @@
-export(ci, permute_test, sign_test)
+export(ci, permute_test, sign_test, confidence_bands, prediction_interval)
 
 S3method(print, sign.test)
 S3method(plot, permute.test)

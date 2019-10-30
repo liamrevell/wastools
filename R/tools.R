@@ -89,3 +89,47 @@ ci<-function(x,conf.level=0.95){
 	setNames(xbar+t*sdx/sqrt(nx)*c(-1,1),
 		c("lower","upper"))
 }
+
+confidence_bands<-function(fit,type=c("polygon","lines","none"),
+	level=0.95){
+	xpt<-seq(min(fit$model[[2]]),
+		max(fit$model[[2]]), 
+		length.out=100)
+	newdata<-data.frame(xpt)
+	colnames(newdata)<-names(fit$model)[2]
+	ypt<-data.frame(predict(fit,
+		newdata=newdata,
+		interval="confidence",level=level))
+	if(type=="lines"){
+		lines(ypt$lwr~xpt,lty=2)
+		lines(ypt$upr~xpt,lty=2)
+	} else if(type=="polygon") {
+		polygon(c(xpt,xpt[100:1]),c(ypt[,2],
+			ypt[100:1,3]),border=NA,
+			col=rgb(220,220,220,150,
+			maxColorValue=255))
+	}
+	invisible(ypt)
+}
+
+prediction_interval<-function(fit,type=c("polygon","lines","none"),
+	level=0.95){
+	xpt<-seq(min(fit$model[[2]]),max(fit$model[[2]]), 
+		length.out=100)
+	newdata<-data.frame(xpt)
+	colnames(newdata)<-names(fit$model)[2]
+	ypt<-data.frame(predict(fit,
+		newdata=newdata,
+		interval="prediction",level=level))
+	if(type=="lines"){
+		lines(ypt$lwr~xpt,lty=2)
+		lines(ypt$upr~xpt,lty=2)
+	} else if(type=="polygon"){
+		polygon(c(xpt,xpt[100:1]),c(ypt[,2],
+			ypt[100:1,3]),border=NA,
+			col=rgb(220,220,220,150,
+			maxColorValue=255))
+	}
+	invisible(ypt)
+}
+
