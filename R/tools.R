@@ -92,6 +92,7 @@ ci<-function(x,conf.level=0.95){
 
 confidence_bands<-function(fit,type=c("polygon","lines","none"),
 	level=0.95){
+	type=type[1]
 	xpt<-seq(min(fit$model[[2]]),
 		max(fit$model[[2]]), 
 		length.out=100)
@@ -114,6 +115,7 @@ confidence_bands<-function(fit,type=c("polygon","lines","none"),
 
 prediction_interval<-function(fit,type=c("polygon","lines","none"),
 	level=0.95){
+	type=type[1]
 	xpt<-seq(min(fit$model[[2]]),max(fit$model[[2]]), 
 		length.out=100)
 	newdata<-data.frame(xpt)
