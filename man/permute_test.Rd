@@ -21,6 +21,5 @@
 	x2<-rexp(n=30, rate=2)
 	object<-permute_test(x1, x2)
 	object
-	plot(object)
 }
 \keyword{statistics}

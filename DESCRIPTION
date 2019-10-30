@@ -1,16 +1,16 @@
 Package: wastools
-Version: 0.0.1
-Date: 2019-10-17
+Version: 0.0.2
+Date: 2019-10-30
 Title: Tools for Biostatistics (following Whitlock & Schluter 2015)
 Author: Liam J. Revell
 Maintainer: Liam J. Revell <liam.revell@umb.edu>
 Depends: R (>= 2.6)
-Imports: graphics, methods, stats
+Imports: graphics, methods, stats, grDevices
 Suggests: 
 ZipData: no
 Description: Some extra functions to support teaching biostats using Whitlock & Schluter (2015).
 License: GPL (>= 2)
 URL: http://github.com/liamrevell/wastools
-Packaged: 2019-10-17 12:00:00 EST
+Packaged: 2019-10-30 12:00:00 EST
 Repository:
-Date/Publication: 2019-10-17 12:00:00 EST
+Date/Publication: 2019-10-30 12:00:00 EST
